@@ -36,7 +36,6 @@ recovery to choose is left up to a human user, who may be prompted for
 the input needed to recover. This SRFI proposes a simple mechanism
 called <em>restarters</em> to encapsulate the information necessary to
 restart a computation with associated interactive prompters.</p>
-</p>
 
 <h2 id="issues">Issues</h2>
 
@@ -54,7 +53,7 @@ software system. Most condition or exception systems provide only a
 one-way flow of information from the signaler to the handler, however:
 they offer no way to communicate possible methods of recovery to the
 signaler. Common Lisp, MIT Scheme, and Dylan are almost unique in this
-regard: they provide comprehensive facilities for restarting exceptional
+regard: they provide comprehensive facilities for restarting in exceptional
 situations. This proposal is considerably simpler than Common Lisp’s or
 Dylan’s restart systems, more in the spirit of Scheme, however. It is
 historically related to MIT Scheme’s system.</p>
@@ -62,7 +61,7 @@ historically related to MIT Scheme’s system.</p>
 interactivity. Though purely programmatic condition recovery is useful,
 it is well-acknowledged by the designers and users of Common Lisp’s
 condition system that the ability to <em>interactively</em> choose a
-method of recovery for a condition: this ability, built-in to the Common
+method of recovery for a condition is useful.  This ability, built-in to the Common
 Lisp language, is one of the primary reasons for the power of Common
 Lisp development and debugging environments. Though much of the baggage
 in Common Lisp’s restart system was deemed unnecessary for this
@@ -253,6 +252,7 @@ subobjects.</p>
 <h2 id="implementation">Implementation</h2>
 <p>The implementation is available at
 <a href="https://github/scheme-requests-for-implementation/srfi-249">Github</a>.
+
 <h2 id="acknowledgements">Acknowledgements</h2>
 
 <p>??? credit where it is due.  For example, please consider
