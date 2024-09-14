@@ -1,3 +1,6 @@
+;; SPDX-FileCopyrightText: 2024 Arvydas Silanskas, Wolfgang Corcoran-Mathe
+;; SPDX-License-Identifier: MIT
+
 (define-syntax assert-type
   (syntax-rules ()
     ((assert-type loc test . args)

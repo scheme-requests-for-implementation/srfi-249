@@ -1,3 +1,6 @@
+;; SPDX-FileCopyrightText: 2024 Arvydas Silanskas, Wolfgang Corcoran-Mathe
+;; SPDX-License-Identifier: MIT
+
 (define (default-interactor restarters)
   ;; Like find-restarter, but only searches its argument list.
   (define (find-local-restarter tag rs)

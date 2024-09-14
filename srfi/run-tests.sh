@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-FileCopyrightText: 2024 Arvydas Silanskas, Wolfgang Corcoran-Mathe
+# SPDX-License-Identifier: MIT
 
 usage () {
         printf 'Usage: %s (chez|guile|chibi)\n' "$(basename $0)" 1>&2

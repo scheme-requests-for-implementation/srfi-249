@@ -1,3 +1,8 @@
+<!--
+;; SPDX-FileCopyrightText: 2024 Arvydas Silanskas, Wolfgang Corcoran-Mathe
+;; SPDX-License-Identifier: MIT
+-->
+
 # Restarters
 
 This is an implementation of John Cowan's

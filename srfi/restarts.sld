@@ -1,3 +1,6 @@
+;; SPDX-FileCopyrightText: 2024 Arvydas Silanskas, Wolfgang Corcoran-Mathe
+;; SPDX-License-Identifier: MIT
+
 (define-library
     (restarts)
     (cond-expand

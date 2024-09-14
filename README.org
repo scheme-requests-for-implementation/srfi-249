@@ -1,4 +1,6 @@
 
+# SPDX-FileCopyrightText: 2024 Arthur A. Gleckler
+# SPDX-License-Identifier: MIT
 * SRFI 249: Restarting conditions
 
 ** by John Cowan
