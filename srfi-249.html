@@ -104,21 +104,6 @@ The cdr of <em>description</em> is a list of strings that describe the
 values to be passed to the invoker in the same natural language: they
 may be phrases or whole sentences.</p>
 <p>The <em>invoker</em> argument is a recovery procedure.</p>
-<p>Examples of creating restarters to help recover from division by
-zero:</p>
-<pre><code>(define return-zero-restarter
-  (make-restarter &#39;return-zero
-   &#39;(&quot;Return zero.&quot;)
-   (lambda () 0)))
-
-(define return-numerator-restarter
-  (make-restarter &#39;return-numerator
-    &#39;(&quot;Return the numerator.&quot;)
-    (lambda () numerator)))
-
-(define return-value-restarter
-  (make-restarter return-value
-    &#39;(&quot;Return a specified value&quot; &quot;The value to return&quot;)))</code></pre>
 <p><code>(restarter? </code><em>obj</em><code>)</code> →
 <em>boolean</em></p>
 <p>Returns <code>#t</code> if <em>obj</em> is a restarter and
@@ -132,9 +117,6 @@ zero:</p>
 <em>list-of-strings</em></p>
 <p>Returns the tag / description of <em>restarter</em>. It is an error
 to mutate <em>list-of-strings</em> or any of its members.</p>
-<p>Access fields of <code>return-denominator-restarter</code>:</p>
-<pre><code>(restarter-tag return-denominator-restarter) → return-denominator
-(restarter-description return-denominator-restarter) → (&quot;Return the numerator.&quot;)</code></pre>
 <p><code>(restart </code><em>restarter arg</em> …<code>)</code> →
 <em>values</em> (may not return)</p>
 <p>Invokes the invoker procedure of <em>restarter</em> on the
@@ -250,9 +232,9 @@ subobjects.</p>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-<p>??? credit where it is due.  For example, please consider
-acknowledging people on the SRFI mailing list who have contributed to
-the discussion.</p>
+<p>This SRFI is based on
+<a href="https://mumble.net/~campbell/proposals/restart.text">a
+proposal</a> by Taylor Campbell.</p>
 
 <h2 id="copyright">Copyright</h2>
 <p>&copy; 2023 Taylor Campbell, John Cowan, Wolfgang
