@@ -20,11 +20,45 @@ implementation)
 
 <h2 id="status">Status</h2>
 
-    <p>This SRFI is currently in <em>draft</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+249+at+srfi+dotschemers+dot+org">srfi-249@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-249/">archive</a>.</p>
+    <p>This SRFI is currently in <em>withdrawn</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+249+at+srfi+dotschemers+dot+org">srfi-249@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-249/">archive</a>.</p>
     <ul>
       <li>Received: 2023-11-11</li>
-      <li>60-day deadline: 2024-01-12</li>
       <li>Draft #1 published: 2023-11-13</li>
+      <li>Draft #2 published: 2024-09-13</li>
+      <li>Withdrawn (superseded by <a href="https://srfi.schemers.org/srfi-255/">SRFI 255</a>): 2024-09-13
+
+        <p>editor's summary of reasons for withdrawal: This SRFI was
+        withdrawn by the editor because there had been no progress
+        since 11-2023, and because he hadn't been able to reach the
+        author since 5-2024.  Wolfgang Corcoran-Mathe volunteered to
+        take over with Marc Nieper-Wißkirchen.</p>
+
+        <p>Wolfgang wrote:</p>
+
+        <blockquote>
+          <p>Marc and I are working out an improved (I think) approach
+            to restarters which simplifies and corrects the semantics
+            of SRFI 249’s restart mechanism.  It’s a major departure
+            from what’s described in SRFI 249, since it makes
+            restarters a new condition type and uses the Scheme
+            exception system rather than 249’s novel restarter stack.</p>
+
+          <p>As it stands, the system proposed by SRFI 249 is awkward to
+            integrate with the Scheme exception system.  It adds a new
+            element to Scheme’s dynamic evaluation environment, a stack
+            of restarters, but does not provide a convenient way to use
+            this stack to recover from an exceptional situation: it
+            leaves the dirty work to the user.  Nor is stack management
+            the full extent of the dirty work.  SRFI 249 says nothing
+            about the control behavior of a restarter, leaving it to the
+            user of the library to ensure that a restarter’s invoker
+            actually returns the interrupted computation to a sane
+            situation.  This is something that even the SRFI’s examples
+            failed to take into a account.</p></blockquote>
+
+        <p>A new SRFI was forked from this one
+        as <a href="https://srfi.schemers.org/srfi-255/">SRFI
+        255</a>.</p></li>
     </ul>
 
 <h2 id="abstract">Abstract</h2>
@@ -41,9 +75,6 @@ recovery to choose is left up to a human user, who may be prompted for
 the input needed to recover. This SRFI proposes a simple mechanism
 called <em>restarters</em> to encapsulate the information necessary to
 restart a computation with associated interactive prompters.</p>
-
-<h2 id="issues">Issues</h2>
-
 
 <h2 id="rationale">Rationale</h2>
 <p>An effective and flexible system for gracefully handling and
